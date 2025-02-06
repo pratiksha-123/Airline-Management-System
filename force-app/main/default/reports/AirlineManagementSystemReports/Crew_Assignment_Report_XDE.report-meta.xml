@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Crew_Member__c$Assigned_Flight__c</field>
+    </columns>
+    <columns>
+        <field>Crew_Member__c$Name</field>
+    </columns>
+    <columns>
+        <field>Crew_Member__c$First_Name__c</field>
+    </columns>
+    <columns>
+        <field>Crew_Member__c$Last_Name__c</field>
+    </columns>
+    <columns>
+        <field>Crew_Member__c$Role__c</field>
+    </columns>
+    <columns>
+        <field>Crew_Member__c$Experience_Years__c</field>
+    </columns>
+    <description>Lists the crew members assigned to each flight, including their roles and experience</description>
+    <format>Tabular</format>
+    <name>Crew Assignment Report</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Crew_Assignment_Report__c</reportType>
+    <scope>user</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Crew_Member__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CURRENT</interval>
+    </timeFrameFilter>
+</Report>
