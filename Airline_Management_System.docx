@@ -1,0 +1,99 @@
+Airline Management System - Project Documentation
+1. Introduction
+The Airline Management System is designed to efficiently manage airline operations, including flight scheduling, passenger bookings, staff management, and financial reports. The system integrates various Salesforce objects, dashboards, and user roles to streamline airline operations.
+2. Objects and Fields
+a. Flight
+Flight Number (Text, Unique, Required)
+Aircraft Type (Picklist: Boeing, Airbus, Private Jet, etc.)
+Departure Airport (Lookup to Airport) 
+Arrival Airport (Lookup to Airport)
+Departure Time (Date/Time)
+Arrival Time (Date/Time)
+Flight Duration (Formula: Arrival Time - Departure Time)
+Status (Picklist: Scheduled, Delayed, Canceled, Completed)
+b. Airport
+Airport Code (Text, Unique, Required)
+Airport Name (Text, Required)
+City (Text)
+Country (Text)
+Number of Terminals (Number)
+Runway Capacity (Number)
+c. Passenger
+Passenger ID (Auto Number, Unique)
+First Name (Text)
+Last Name (Text)
+Email (Email, Unique)
+Phone Number (Phone)
+Total Flights Taken (Number)
+
+
+
+d. Booking
+Booking ID (Auto Number, Unique)
+Passenger (Lookup to Passenger)
+Flight (Lookup to Flight)
+Booking Date (Date/Time)
+Seat Number (Text)
+Class (Picklist: Economy, Business, First Class)
+Price (Currency)
+Payment Status (Picklist: Paid, Pending, Canceled)
+e. Crew Member
+Crew ID (Auto Number, Unique)
+First Name (Text)
+Last Name (Text)
+Role (Picklist: Pilot, Co-Pilot, Flight Attendant, Engineer)
+Assigned Flight (Lookup to Flight)
+Experience (Years) (Number)
+Certification Status (Picklist: Valid, Expired)
+f. Financial Records
+Transaction ID (Auto Number, Unique)
+Booking (Lookup to Booking)
+Amount (Currency)
+Payment Method (Picklist: Credit Card, Debit Card, PayPal, Cash)
+Transaction Date (Date/Time)
+Status (Picklist: Completed, Failed, Pending)
+3. Reports and Dashboards
+Reports
+1.Daily Flight Schedule - Lists all flights for a specific date with departure and arrival times.
+2.Passenger Booking Report - Displays bookings per passenger, including class, flight, and price.
+3.Revenue Report - Shows revenue from bookings, categorized by month and class.
+4.Crew Assignment Report - Lists crew members assigned to each flight.
+Dashboards
+1. Daily Flight Schedule Dashboard
+Purpose: Monitor daily flights with real-time status.
+2.Passenger Booking Dashboard
+Purpose: Track passenger bookings, preferred classes, and trends.
+3.Revenue Dashboard
+Purpose: Monitor revenue performance across flights and classes.
+4.Crew Assignment Dashboard
+Purpose: Monitor crew workload and assignments.
+
+4. Users and Roles
+a. Administrator
+Full system access
+Manages flights, passengers, and crew
+Oversees financial transactions
+Generates reports and dashboards
+b. Airline Manager
+Access to flight scheduling
+Assigns crew to flights
+Monitors flight status and disruptions
+Generates operational reports
+c. Booking Agent
+Creates and manages passenger bookings
+Processes payments and refunds
+Generates booking and payment reports
+d. Crew Member
+Views assigned flight schedule
+Updates availability status
+Receives notifications for certifications and training
+e. Financial Analyst
+Accesses revenue and transaction data
+Generates financial reports
+Monitors payment statuses
+f. Passenger (Self-Service Portal)
+Views flight details
+Books tickets
+Checks booking status and payment history
+5. Conclusion
+The Airline Management System streamlines operations, enhances efficiency, and provides a structured way to manage airline bookings, crew assignments, and financial records. The inclusion of role-based access ensures security and data integrity, while dashboards and reports allow for real-time decision-making.
